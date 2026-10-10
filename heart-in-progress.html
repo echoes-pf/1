@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#faf8f5">
+  <meta name="description" content="扮演王总，邂逅麻加其、长真元与定晨新。三条校园偶像恋爱路线，九种由你选择的结局。">
+  <title>心动未完待续 · 星榆校园恋爱企划</title>
+  <style>
+@charset "UTF-8";
+:root { --paper: #faf8f5; --ink: #393a33; --muted: #989184; --olive: #485344; --rose: #af7f8c; --line: #e6e1d8; --serif: 'Songti SC', 'Noto Serif CJK SC', 'Source Han Serif SC', SimSun, Georgia, serif; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif; -webkit-font-smoothing: antialiased; }
+button { font: inherit; border: 0; cursor: pointer; color: inherit; background: none; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button:focus-visible { outline: 2px solid #7d8a6e; outline-offset: 5px; }
+h1:focus { outline: none; }
+button { transition: background .18s, border-color .18s, transform .18s; }
+button:hover { filter: brightness(.97); }
+.site-shell { max-width: 1180px; margin: auto; padding: 0 48px; }
+.site-header { display: flex; align-items: center; gap: 36px; height: 112px; border-bottom: 1px solid var(--line); }
+.brand { display: flex; gap: 13px; align-items: center; text-align: left; padding: 0; }
+.brand-mark { display: grid; place-items: center; width: 42px; height: 44px; border-radius: 13px; background: #eee6e9; color: #ad7188; font-size: 34px; }
+.brand strong { display: block; font-size: 17px; font-weight: 600; letter-spacing: 3px; }
+.brand small { display: block; font-size: 8px; color: #9f958d; letter-spacing: 2px; margin-top: 7px; }
+nav { display: flex; gap: 32px; margin-left: auto; height: 100%; align-items: center; }
+nav button { height: 100%; position: relative; font-size: 13px; color: #a0998e; padding: 0; }
+nav button.active { color: #59694b; }
+nav button.active::after { content: ''; position: absolute; height: 2px; width: 24px; background: #788569; bottom: -1px; left: 50%; transform: translateX(-50%); }
+nav span { margin-left: 6px; background: #eeeae2; color: #928d81; border-radius: 12px; padding: 2px 6px; font-size: 10px; }
+.edition { font-size: 9px; letter-spacing: 2px; color: #a79e91; border-left: 1px solid #ddd7cd; padding-left: 32px; }
+.welcome { display: flex; justify-content: space-between; align-items: center; margin: 30px 0 18px; }
+.eyebrow { display: block; font-size: 10px; color: #9d8b8f; letter-spacing: 2px; line-height: 1.8; }
+.welcome-note { font-size: 9px; letter-spacing: 1.5px; color: #ada395; }
+.hero { display: grid; grid-template-columns: 1.05fr 1fr; background: #efe5e7; border-radius: 6px; overflow: hidden; min-height: 428px; }
+.hero-copy { padding: 40px 12px 34px 44px; position: relative; z-index: 1; }
+.hero-kicker { font-size: 10px; letter-spacing: 2px; color: #9b7f89; display: flex; gap: 10px; align-items: center; }
+.hero-kicker i { width: 5px; height: 5px; border-radius: 50%; background: #b88f9b; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; }
+.hero h1 { margin: 25px 0 16px; font-size: clamp(32px, 4vw, 47px); line-height: 1.5; letter-spacing: 3px; color: #50444a; }
+.title-dot { color: #a87e8c; }
+.hero-copy > p { margin: 0; color: #9a8189; font-size: 12px; line-height: 2; letter-spacing: 1px; }
+.hero-actions { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.primary { background: var(--olive); color: #fcfaf3; border-radius: 4px; padding: 17px 24px; font-size: 13px; letter-spacing: 1px; min-width: 207px; display: flex; gap: 34px; align-items: center; justify-content: space-between; }
+.primary:hover { background: #5b6755; filter: none; }
+.primary span { font-size: 18px; }
+.play-note { font-size: 10px; color: #a18991; }
+.hero-meta { display: flex; gap: 13px; color: #a38c93; font-size: 10px; margin-top: 22px; letter-spacing: 1px; }
+.hero-meta b { font-weight: 400; color: #ba9ba6; }
+.resume { display: flex; gap: 16px; align-items: center; font-size: 11px; color: #7c7468; border-bottom: 1px solid #cfc2c1; padding: 8px 0; }
+.resume span { color: #9d858c; font-size: 10px; }
+.hero-art { position: relative; min-height: 430px; overflow: hidden; }
+.art-corner { position: absolute; right: 25px; top: 28px; font-size: 8px; color: #b299a2; letter-spacing: 2px; line-height: 1.8; text-align: right; }
+.arch { position: absolute; width: 226px; height: 277px; left: 50%; top: 44px; transform: translateX(-44%); border: 1px solid #cfbfc2; border-radius: 115px 115px 0 0; background: #f6ede9; overflow: hidden; }
+.sun { width: 113px; height: 113px; position: absolute; top: 53px; right: 17px; background: #e4c9b9; border-radius: 50%; }
+.window-line { position: absolute; background: #cdbcc1; z-index: 2; }.vertical { width: 1px; height: 100%; left: 50%; }.horizontal { height: 1px; width: 100%; top: 55%; }
+.hills { position: absolute; width: 310px; height: 180px; background: #d8dacc; border-radius: 50%; bottom: -91px; left: -57px; transform: rotate(-20deg); }
+.hills::after { content: ''; position: absolute; width: 280px; height: 160px; background: #c5ccbb; border-radius: 50%; left: 127px; bottom: -25px; }
+.orbit { position: absolute; border: 1px solid #d4bec5; border-radius: 50%; }.orbit-one { width: 350px; height: 90px; left: 52px; bottom: 62px; transform: rotate(-20deg); }.orbit-two { width: 365px; height: 115px; left: 72px; bottom: 70px; transform: rotate(13deg); }
+.book { position: absolute; border-radius: 3px 8px 8px 3px; box-shadow: 6px 9px 0 #a9939e18; border-left: 6px solid #ffffff45; display: flex; flex-direction: column; align-items: center; }
+.book-one { width: 149px; height: 198px; top: 171px; left: calc(50% - 149px); background: #a3ae9c; color: #f7f3e8; transform: rotate(-18deg); padding: 37px 15px; z-index: 3; }
+.book-one > span { font-family: Georgia, serif; font-size: 34px; font-style: italic; line-height: 1.1; }.book-one small { letter-spacing: 2px; font-size: 6px; margin-top: auto; }
+.book-two { width: 154px; height: 207px; top: 166px; left: calc(50% - 5px); background: #c691a3; color: #f6e8e3; transform: rotate(13deg); padding: 24px; z-index: 4; }
+.book-heart { font-size: 72px; line-height: 1.6; font-family: Georgia, serif; }.book-star { font-size: 20px; position: absolute; top: 17px; right: 17px; }.book-two small { font-family: var(--serif); font-size: 14px; letter-spacing: 4px; }
+.flower { position: absolute; top: 197px; left: calc(50% - 208px); font-size: 71px; color: #b39170; transform: rotate(8deg); z-index: 5; }
+.flower-stem { height: 121px; width: 1px; background: #a8a184; transform: rotate(-23deg); top: 251px; left: calc(50% - 162px); position: absolute; z-index: 2; }
+.flower-stem::after { content: ''; position: absolute; width: 24px; height: 12px; background: #a0aa8d; border-radius: 0 100% 0 100%; top: 60px; }
+.art-star { position: absolute; color: #a68d94; }.star-one { top: 83px; left: 63px; font-size: 25px; }.star-two { right: 48px; bottom: 110px; font-size: 32px; }
+.art-script { position: absolute; bottom: 31px; left: 97px; font: italic 16px Georgia, serif; color: #9e808d; }.art-number { position: absolute; bottom: 31px; right: 25px; color: #ae929f; font: 27px Georgia, serif; }
+.section-heading { display: flex; justify-content: space-between; align-items: flex-end; margin: 38px 0 21px; }.section-heading h2 { font-size: 25px; letter-spacing: 1px; margin: 8px 0 0; }.section-aside { font-size: 10px; color: #a49888; padding-bottom: 3px; }
+.boy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }.boy-card { border: 1px solid #e7e0d7; background: #fffdf9; border-radius: 5px; overflow: hidden; --accent: #b17e8c; --tint: #f1e4e6; }
+.chang { --accent: #7e96b0; --tint: #e8eef3; }.ding { --accent: #919772; --tint: #eeeee2; }
+.card-visual { background: var(--tint); height: 107px; position: relative; overflow: hidden; }.card-number { position: absolute; top: 15px; left: 17px; font-size: 8px; color: var(--accent); letter-spacing: 1px; }
+.card-symbol { position: absolute; font: 67px Georgia, serif; color: var(--accent); top: 15px; left: 50%; transform: translateX(-50%) rotate(-9deg); z-index: 1; }
+.visual-lines { position: absolute; width: 119px; height: 150px; border: 1px solid #ffffff85; border-radius: 65px 65px 0 0; top: 13px; left: 50%; transform: translateX(-50%); }.visual-lines::after { content: ''; position: absolute; width: 154px; height: 80px; border: 1px solid #ffffff70; border-radius: 50%; left: -18px; top: 24px; transform: rotate(-20deg); }
+.visual-caption { position: absolute; bottom: 12px; right: 15px; font: italic 10px Georgia, serif; color: var(--accent); }
+.boy-copy { padding: 20px 19px 16px; }.boy-heading { display: flex; justify-content: space-between; align-items: center; }.route-role { color: #a0968b; font-size: 9px; letter-spacing: 1px; }.boy-heading h3 { font-size: 24px; margin: 5px 0 0; letter-spacing: 2px; }.route-tag { font-size: 9px; color: var(--accent); border: 1px solid var(--tint); border-radius: 3px; padding: 5px 7px; }
+.boy-copy > p { font-size: 11px; color: #92877b; margin: 12px 0 18px; letter-spacing: 1px; }.boy-bottom { border-top: 1px solid #eee8df; padding-top: 13px; display: flex; justify-content: space-between; align-items: center; }.boy-bottom > span { font-size: 9px; color: #aaa094; }.text-button { font-size: 11px; color: var(--accent); padding: 5px 0 5px 12px; }.text-button span { margin-left: 10px; }
+.letter-note { display: flex; gap: 22px; align-items: center; padding: 24px 30px; background: #eeefe7; border-radius: 5px; margin-top: 26px; color: #7c846f; }.letter-icon { font-size: 28px; color: #939b80; }.letter-note strong { font-size: 12px; font-weight: 500; letter-spacing: 1px; }.letter-note p { font-size: 10px; color: #949b86; margin: 9px 0 0; line-height: 1.8; }.note-flower { margin-left: auto; font-size: 33px; color: #b0b89d; }
+.site-footer { display: flex; justify-content: space-between; padding: 30px 0; margin-top: 20px; border-top: 1px solid var(--line); color: #b1a799; font-size: 9px; letter-spacing: 1px; }
+.route-page, .collection-page { padding-top: 31px; padding-bottom: 20px; }.back-link { display: block; padding: 0; color: #959082; font-size: 11px; margin-bottom: 39px; }.route-page > h1, .collection-page > h1 { font-size: 35px; margin: 15px 0 12px; letter-spacing: 2px; }.page-desc { color: #a09687; font-size: 12px; line-height: 1.9; margin: 0 0 31px; }
+.selection-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }.select-card { --accent: #b17e8c; --tint: #f1e4e6; display: flex; flex-direction: column; align-items: flex-start; text-align: left; border: 1px solid #e2dbd0; border-radius: 5px; background: #fffdf9; padding: 25px 24px; position: relative; }.select-card.chang { --accent: #7e96b0; --tint: #e8eef3; }.select-card.ding { --accent: #919772; --tint: #eeeee2; }.select-card.selected { border-color: var(--accent); background: var(--tint); box-shadow: inset 0 0 0 1px var(--accent); }.select-top { display: flex; width: 100%; justify-content: space-between; color: #a19687; font-size: 10px; align-items: center; }.radio { font-size: 19px; color: var(--accent); }.select-art { align-self: center; margin: 20px 0 18px; font: 66px Georgia, serif; color: var(--accent); }.select-name { font: 29px var(--serif); letter-spacing: 2px; margin-bottom: 13px; }.select-card .route-tag { position: absolute; right: 24px; top: 184px; }.select-sub { font-size: 12px; color: #8f8579; letter-spacing: 1px; }.select-intro { font-size: 12px; line-height: 1.9; color: #8d857a; margin: 24px 0; min-height: 69px; }.quote { border-top: 1px solid #c7b9b340; padding-top: 19px; font: 13px var(--serif); color: var(--accent); line-height: 1.8; width: 100%; }
+.begin-actions { display: flex; flex-direction: column; align-items: center; margin-top: 32px; gap: 17px; }.begin-actions .primary { min-width: 305px; justify-content: center; }.tiny-note { color: #ada391; font-size: 10px; }
+.reader { max-width: 660px; margin: auto; padding: 30px 0 20px; --accent: #b17e8c; --tint: #f1e4e6; }.reader.chang { --accent: #7e96b0; --tint: #e8eef3; }.reader.ding { --accent: #919772; --tint: #eeeee2; }
+.reader-nav { display: flex; justify-content: space-between; }.reader-nav .back-link { margin-bottom: 23px; }.reader-banner { display: flex; justify-content: space-between; color: var(--accent); background: var(--tint); border-radius: 4px; padding: 16px 18px; font-size: 12px; }.reader-banner span:last-child { font-size: 10px; display: flex; gap: 5px; align-items: center; }.reader-banner i { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }.progress { margin: 17px 0 33px; height: 2px; background: #e6e1d8; }.progress span { display: block; background: var(--accent); height: 100%; transition: width .2s; }.reader h1 { font-size: 32px; margin: 17px 0 12px; letter-spacing: 1px; }.location { font-size: 11px; color: #aaa08e; }.story-text { font-family: var(--serif); font-size: 17px; line-height: 2.1; letter-spacing: .7px; color: #5d5d50; margin: 31px 0 39px; }.story-text p { margin: 0 0 22px; }.choice-caption { display: flex; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 23px; margin-bottom: 19px; font-size: 12px; color: #7f876f; }.choice-caption small { font-size: 10px; color: #aba18f; }.choice { display: flex; text-align: left; align-items: center; width: 100%; border: 1px solid #ded8ca; border-radius: 4px; background: #fffdf8; padding: 16px 18px; margin: 12px 0; color: #6b7160; line-height: 1.8; font-size: 13px; }.choice:hover { background: #edf0e5; border-color: #a3ae90; filter: none; transform: translateX(3px); }.choice-letter { font: 14px Georgia, serif; color: #a09684; border-right: 1px solid #e2dbc9; padding-right: 15px; margin-right: 17px; }.choice-text { flex: 1; }.choice-arrow { margin-left: 15px; color: #9d9f8c; }.back-choice { display: block; margin: 24px auto; padding: 10px; font-size: 11px; color: #aaa18e; }
+.ending-stamp { display: flex; flex-direction: column; align-items: center; margin: 30px 0; color: var(--accent); gap: 12px; }.ending-stamp > span { font-size: 47px; }.ending-stamp strong { font-size: 12px; font-weight: 400; letter-spacing: 1px; }.ending-stamp small { font-size: 10px; color: #a49a87; }.ending-actions { max-width: 360px; margin: auto; }.ending-actions .primary { width: 100%; justify-content: center; }.secondary { margin-top: 12px; width: 100%; padding: 17px; border: 1px solid #d9d5c6; border-radius: 4px; color: #838973; font-size: 12px; }
+.collection-count { font: 48px Georgia, serif; color: #a78590; margin: 0 0 28px; }.collection-count span { font: 11px -apple-system, sans-serif; margin-left: 17px; color: #a69a88; }.memory-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }.memory-group { --accent: #b17e8c; --tint: #f1e4e6; }.memory-group.chang { --accent: #7e96b0; --tint: #e8eef3; }.memory-group.ding { --accent: #919772; --tint: #eeeee2; }.memory-group h2 { font-size: 24px; margin: 0 0 18px; }.memory-group h2 span { margin-right: 13px; color: var(--accent); font-family: Georgia, serif; }.memory { display: flex; align-items: center; gap: 14px; border: 1px dashed #dcd6c9; border-radius: 4px; padding: 19px 17px; margin-bottom: 13px; color: #b1a797; min-height: 78px; }.memory.unlocked { border: 1px solid var(--tint); background: var(--tint); color: var(--accent); }.memory-icon { font: 27px Georgia, serif; }.memory strong { font-size: 12px; font-weight: 400; }.memory small { display: block; margin-top: 8px; font-size: 9px; color: #ab9e8c; }
+#toast { position: fixed; bottom: 32px; left: 50%; transform: translate(-50%, 20px); background: #485344; color: #fffdf4; border-radius: 7px; padding: 16px 23px; font-size: 12px; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; z-index: 10; max-width: 90vw; width: max-content; }#toast.visible { opacity: 1; transform: translate(-50%, 0); }
+@media (min-width: 1400px) { .site-shell { max-width: 1230px; }.hero { min-height: 460px; }.hero-copy { padding-top: 48px; }.hero-art { min-height: 460px; }.arch { top: 58px; }.book-one { top: 192px; }.book-two { top: 187px; }.hero h1 { font-size: 50px; }.card-visual { height: 122px; }.card-symbol { top: 23px; } }
+@media (max-width: 800px) { .site-shell { padding: 0 25px; }.site-header { height: 91px; gap: 15px; }.edition { display: none; }nav { gap: 19px; }.brand strong { font-size: 14px; letter-spacing: 2px; }.brand small { font-size: 6px; letter-spacing: 1.5px; }.hero-copy { padding: 31px 0 28px 27px; }.hero h1 { font-size: 33px; }.hero-art { min-height: 395px; transform-origin: center; }.arch { width: 184px; height: 240px; top: 45px; }.book-one { width: 117px; height: 166px; left: calc(50% - 113px); top: 174px; padding: 29px 12px; }.book-one > span { font-size: 28px; }.book-two { width: 127px; height: 175px; top: 169px; }.book-heart { font-size: 56px; }.book-two small { font-size: 11px; }.flower { left: calc(50% - 151px); top: 194px; font-size: 53px; }.flower-stem { left: calc(50% - 120px); height: 90px; top: 239px; }.orbit { left: 3%; width: 90%; }.art-script { left: 15%; font-size: 12px; }.art-corner { font-size: 6px; right: 15px; }.star-one { left: 14px; }.star-two { right: 13px; font-size: 24px; }.boy-grid, .selection-grid, .memory-grid { gap: 12px; }.boy-copy { padding: 15px 13px; }.route-tag { font-size: 8px; padding: 4px; }.boy-heading { flex-wrap: wrap; gap: 8px; }.boy-bottom > span { display: none; }.boy-bottom { justify-content: flex-end; }.select-card { padding: 21px 16px; }.select-card .route-tag { position: static; margin-bottom: 15px; }.select-name { font-size: 26px; }.select-intro { min-height: 91px; }.quote { font-size: 11px; }.memory { padding: 16px 12px; gap: 10px; }.memory strong { font-size: 11px; } }
+@media (max-width: 560px) { .site-shell { padding: 0 22px; }.site-header { height: 88px; }.brand-mark { width: 34px; height: 37px; font-size: 28px; border-radius: 10px; }.brand { gap: 9px; }.brand strong { font-size: 13px; }.brand small { font-size: 5px; letter-spacing: 1px; }nav { gap: 15px; }nav button { font-size: 11px; }nav span { font-size: 8px; margin-left: 3px; padding: 2px 5px; }.welcome { margin-top: 23px; }.welcome-note { display: none; }.eyebrow { font-size: 9px; letter-spacing: 1.8px; }.hero { display: block; }.hero-copy { padding: 28px 27px 0; }.hero h1 { font-size: 37px; line-height: 1.48; margin: 23px 0 15px; }.hero-copy > p { font-size: 11px; }.hero-kicker { font-size: 9px; }.hero-actions { margin-top: 24px; gap: 14px; }.hero-actions .primary { width: 100%; }.play-note { display: none; }.hero-meta { margin-top: 19px; gap: 12px; font-size: 9px; }.resume { width: 100%; justify-content: space-between; padding-bottom: 12px; }.hero-art { min-height: 255px; margin-top: 2px; }.arch { top: 16px; width: 158px; height: 205px; left: 58%; }.sun { width: 83px; height: 83px; top: 36px; }.book-one { top: 54px; width: 116px; height: 155px; left: calc(50% - 98px); }.book-two { top: 51px; width: 121px; height: 165px; left: calc(50% + 17px); }.book-heart { font-size: 51px; }.flower { top: 85px; left: calc(50% - 152px); }.flower-stem { top: 128px; left: calc(50% - 118px); }.art-corner { top: 14px; right: 19px; }.art-script { bottom: 22px; left: 28px; font-size: 12px; }.art-number { bottom: 19px; right: 22px; font-size: 20px; }.orbit-one { bottom: 45px; }.orbit-two { bottom: 49px; }.star-one { top: 26px; left: 34px; font-size: 17px; }.star-two { bottom: 53px; right: 16px; font-size: 22px; }.section-heading { margin-top: 29px; }.section-heading h2 { font-size: 22px; margin-top: 7px; }.section-aside { display: none; }.boy-grid { grid-template-columns: 1fr; gap: 13px; }.boy-card { display: flex; }.card-visual { height: auto; min-height: 146px; width: 103px; flex-shrink: 0; }.card-symbol { font-size: 57px; top: 46px; }.card-number { top: 14px; left: 13px; }.visual-caption { font-size: 7px; right: 6px; bottom: 14px; }.visual-lines { width: 86px; top: 28px; }.boy-copy { padding: 20px 18px 15px; flex: 1; }.boy-heading { flex-wrap: nowrap; gap: 6px; }.boy-heading h3 { font-size: 23px; }.route-role { font-size: 8px; }.boy-copy > p { margin: 13px 0; font-size: 10px; }.boy-bottom { justify-content: space-between; padding-top: 10px; }.boy-bottom > span { display: block; font-size: 8px; }.text-button { font-size: 10px; padding-left: 4px; }.text-button span { margin-left: 4px; }.letter-note { gap: 13px; padding: 23px 18px; }.letter-icon { font-size: 24px; }.letter-note strong { font-size: 11px; letter-spacing: .5px; }.letter-note p { font-size: 10px; line-height: 1.9; }.note-flower { display: none; }.site-footer { display: block; text-align: center; font-size: 8px; line-height: 2.3; margin-top: 23px; padding: 20px 0 28px; }.site-footer span { display: block; }.route-page > h1, .collection-page > h1 { font-size: 29px; }.page-desc { font-size: 11px; }.selection-grid { grid-template-columns: 1fr; gap: 17px; }.select-card { padding: 22px; }.select-top { font-size: 10px; }.select-art { position: absolute; right: 27px; top: 39px; font-size: 63px; margin: 0; }.select-name { margin-top: 22px; margin-bottom: 10px; font-size: 30px; }.select-card .route-tag { position: absolute; top: 105px; right: 28px; margin: 0; }.select-sub { font-size: 11px; }.select-intro { min-height: 0; margin: 20px 0; font-size: 12px; }.quote { padding-top: 15px; font-size: 12px; }.begin-actions .primary { width: 100%; min-width: 0; }.tiny-note { font-size: 9px; }.reader { padding-top: 26px; }.reader h1 { font-size: 27px; line-height: 1.5; margin-top: 16px; }.reader-banner { padding: 15px; font-size: 11px; }.story-text { font-size: 16px; line-height: 2.05; letter-spacing: .5px; margin-top: 27px; }.story-text p { margin-bottom: 24px; }.choice { font-size: 12px; padding: 16px 14px; }.choice-letter { padding-right: 12px; margin-right: 12px; }.memory-grid { grid-template-columns: 1fr; gap: 24px; }.memory-group h2 { font-size: 23px; }.memory { padding: 18px; }.memory strong { font-size: 12px; }.collection-count { font-size: 41px; }.back-link { margin-bottom: 30px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+
+</style>
+  
+  
+  
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <button class="brand" data-action="home" aria-label="心动未完待续，回到书架"><span class="brand-mark">♡</span><span><strong>心动未完待续</strong><small>A LITTLE CAMPUS ROMANCE</small></span></button>
+      <nav aria-label="主导航"><button data-action="home" id="nav-home">故事书架</button><button data-action="collection" id="nav-collection">心动手记 <span id="counter">0</span></button></nav>
+      <span class="edition">VOL. 01 / AUTUMN</span>
+    </header>
+    <main id="app"></main>
+    <footer class="site-footer"><span>星榆的风，记得每一次心动。</span><span>一份可以慢慢读的青春 · 原创互动小说</span></footer>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <noscript>请开启 JavaScript，开始你的互动故事。</noscript>
+<script>
+/* Original story data, shared by the mini program and the browser edition. */
+(function (root) {
+  const routes = [
+    { id: 'ma', name: '麻加其', subtitle: '把心动写进副歌', role: '音乐社主唱', tag: '直球 · 热烈', color: '#d9828c', icon: '♫', intro: '舞台上的他总能接住所有目光，台下却只想等你一句回应。', quote: '「这首歌，只唱给你听。」' },
+    { id: 'chang', name: '长真元', subtitle: '镜头之外的偏爱', role: '摄影社学长', tag: '慢热 · 温柔', color: '#809cbd', icon: '◈', intro: '他习惯藏在取景框后面，直到你的出现，让他想走进画面。', quote: '「这一次，我想和你一起入镜。」' },
+    { id: 'ding', name: '定晨新', subtitle: '和你一起奔向明天', role: '舞蹈社队长', tag: '傲娇 · 陪伴', color: '#9c9f73', icon: '✧', intro: '那个总与你拌嘴的练习室邻居，偷偷记得你所有小小的愿望。', quote: '「别掉队，我会一直等你。」' }
+  ];
+  const c = (text, next, affection, courage, flag) => ({ text, next, affection, courage, flag });
+  const scene = (chapter, title, place, paragraphs, choices, extra) => Object.assign({ chapter, title, place, paragraphs, choices }, extra || {});
+  const stories = {
+    ma: {
+      start: scene(1, '风吹过未完成的歌', '星榆大学 · 音乐楼', [
+        '九月的风把招新海报吹得哗哗作响。你抱着校园音乐节的策划本，穿过音乐楼的长廊。大家习惯叫你“王总”——因为你总能把一团乱麻安排得井井有条。',
+        '一段吉他声从半开的门里落出来。麻加其坐在窗沿，脚边堆着改了又改的歌词。舞台上耀眼的主唱，此刻对着最后一行发呆。',
+        '“王总，救个场？”他抬头笑，“如果一首歌只能留给一个人，你会怎么写最后一句？”'
+      ], [c('“先告诉我，那个人是谁。”', 'rehearsal', 2, 1), c('坐下来，陪他把旋律听完。', 'rehearsal', 2, 0), c('“截稿前交给我就行。”', 'rehearsal', 0, 0)]),
+      rehearsal: scene(2, '排练后的秘密加场', '音乐楼 · 小礼堂', [
+        '排练结束，大家陆续离开。你留下核对设备清单，麻加其却又走回了麦克风前。',
+        '“今天还剩一个听众。”他说。礼堂的灯只亮了一半，他唱起那首未完成的歌。你发现，副歌里竟然藏着你上周随口说过的那句话。',
+        '最后一个音落下，他没有问好不好听，只问：“明天下午，你愿意和我出去找找灵感吗？”'
+      ], [c('答应他，一起去老唱片店。', 'records', 2, 1, 'record'), c('“不如去天台，那里安静。”', 'rooftop', 2, 0, 'roof'), c('先把音响调好，约定在学校聊。', 'rooftop', 0, 0, 'work')]),
+      records: scene(3, 'A面的歌，B面的心事', '梧桐路 · 旧唱片店', [
+        '唱片店老板把一副试听耳机递给你们。麻加其分给你一边，平日里大大方方的人，却在手指碰到你的那刻突然安静。',
+        '他挑中一张没有封面的唱片。“第一次上台，我忘了词。后来大家说我天生适合舞台……其实每次我都怕。”',
+        '窗外阳光移过唱片架。他望着你：“如果音乐节那天，我又忘词了呢？”'
+      ], [c('“那就看着我，我会把下一句唱给你。”', 'storm', 2, 1), c('在他的歌词本上写下：“慢慢来。”', 'storm', 2, 0), c('帮他整理一份备用歌词。', 'storm', 1, 0)]),
+      rooftop: scene(3, '天台的半拍停顿', '音乐楼 · 天台', [
+        '你们坐在天台的长椅上，远处球场的哨声混进晚风。麻加其第一次没带吉他，指尖在膝上敲着不稳的节拍。',
+        '“有时候我也想，自己除了唱歌，还能让别人喜欢什么。”他的笑淡下来，“你是不是只需要一个能完成演出的主唱？”',
+        '你合上策划本。夕阳把他的影子拉得很长，长到与你的影子挨在一起。'
+      ], [c('“今天坐在这里的，是我想认识的麻加其。”', 'storm', 2, 1), c('告诉他，你记得他帮新生搬过整天的设备。', 'storm', 2, 0), c('认真讨论下一次排练的安排。', 'storm', 0, 0)]),
+      storm: scene(4, '灯熄灭的那一分钟', '音乐节后台 · 雨夜', [
+        '音乐节前夜突然下起大雨，露天舞台临时关闭。麻加其的新歌被建议换成观众更熟悉的曲目。',
+        '他把改好的歌词折起来：“换吧，别让大家的努力白费。”可是你看见，他攥住纸角的手一直没有松开。',
+        '你盘点了能用的场地：学生中心还有一间小剧场，能容下报名的新生。要保住新歌，就要重新协调所有人的时间。'
+      ], [c('和他一起争取小剧场，把计划做完整。', 'finale', 2, 1, 'smallstage'), c('问他的想法，陪他录下这首歌。', 'finale', 2, 0, 'recording'), c('尊重换歌安排，先确保演出完成。', 'finale', 0, 0, 'cover')]),
+      finale: scene(5, '副歌留给谁', '音乐节 · 演出之后', [
+        { flag: 'smallstage', yes: '小剧场的座位坐得满满当当。没有华丽灯光，麻加其却唱得比任何一次排练都认真。唱到最后一句，他终于望向了你。', no: '最终演出顺利结束。散场后，麻加其叫住你，在空荡荡的后台，把那首新歌的最后一段轻轻唱完。' },
+        '“我想过很多种结尾，”他说，“后来发现，我其实是想知道，你愿不愿意听下一首。”',
+        '人群的喧闹隔着一道门。那张写满修改痕迹的歌词纸，被他郑重地放进你的手心。'
+      ], [c('“愿意。但下一首，要写我们两个人。”', 'ending', 2, 1, 'confession'), c('收好歌词，约他明天一起吃早饭。', 'ending', 2, 0), c('“我会一直是你的听众。”', 'ending', 0, 0)]),
+      endings: {
+        love: { title: '只属于你的安可', label: '心动结局', paragraphs: ['麻加其愣了半拍，笑意才一点点漫上眼睛。“那我得写一首很长的歌。”', '后来每场演出，他都会在开场前朝你的位置看一眼。你也学会了：不必永远做那个照顾所有人的王总，也可以做一个被认真喜欢的人。', '春天的新歌发布那天，作词栏出现了两个名字。最后一句是：人群散去以后，我们的故事才刚开始。'] },
+        warm: { title: '明天见，固定听众', label: '温柔结局', paragraphs: [{ flag: 'confession', yes: '麻加其听懂了你的心意，却没有急着许诺：“我想先好好认识工作之外的你，可以慢慢来吗？”你点头，把明早的早餐时间留给了他。', no: '你们没有急着把关系说成某个确定的词。麻加其开始习惯把新旋律先发给你，你开始在日程表里，为两个人的早餐留出空白。' }, '一个月后，他递来一张演出邀请函。背面是手写的小字：“如果你愿意，下次我想正式约你。”', '这段故事停在一个尚未说出口的答案前。你知道，下一次见面，依然值得期待。'] },
+        friend: { title: '青春的合唱', label: '友情结局', paragraphs: [{ flag: 'confession', yes: '麻加其认真听完你的话，轻声说：“谢谢你告诉我。但我现在的心意，更像对一位重要朋友的感谢。”你有一点遗憾，也感谢他没有用含糊的答案敷衍你。', no: '你们一起办成了难忘的音乐节。麻加其在庆功会认真感谢你，说没有王总，许多人的第一场舞台都不会发生。' }, '你把歌词收进活动档案，也把这个会紧张、会坚持的主唱记在心里。你们成为最默契的工作搭档。', '有些歌是写给爱情的，有些歌属于整个青春。这一首，你们留给了所有同行的人。'] }
+      }
+    },
+    chang: {
+      start: scene(1, '你走进了他的取景框', '星榆大学 · 银杏大道', [
+        '校园音乐节的宣传工作落到你手里。大家喊你“王总”，你也习惯了走路时一边看策划本，一边回工作消息。',
+        '银杏大道上，你差点撞进一只举着相机的手。长真元及时放下镜头：“小心台阶。”他的声音轻得像一片落叶。',
+        '你邀请摄影社帮忙拍宣传照。他点头，却提出一个意外的请求：“可以先拍一张你吗？不是负责人，是今天的你。”'
+      ], [c('放下策划本，朝镜头认真笑一下。', 'contact', 2, 1), c('“先让我看看你喜欢拍什么。”', 'contact', 2, 0), c('把拍摄时间记进工作表。', 'contact', 0, 0)]),
+      contact: scene(2, '被删掉的第十七张', '摄影社 · 暗房门口', [
+        '长真元把样片发给你。人群、舞台、树影都很漂亮，但文件编号从十六直接跳到了十八。',
+        '“十七呢？”你问。他低头整理相机带：“没拍好。”屏幕还没关，你已经看见缩略图——你蹲在地上，给一位弄丢节目单的新生画路线。',
+        '“我不知道你愿不愿意，让工作以外的样子被别人看见。”他解释。明天是最后一天补拍，你们可以自己决定去哪里。'
+      ], [c('“我们去旧温室吧，拍一张不用发布的照片。”', 'glasshouse', 2, 1, 'glass'), c('邀请他拍清晨的图书馆。', 'library', 2, 0, 'library'), c('约在图书馆，先完成宣传任务。', 'library', 0, 0, 'task')]),
+      glasshouse: scene(3, '玻璃房里的光', '旧温室 · 午后', [
+        '旧温室里有野生的薄荷，玻璃顶漏下细碎的光。你没有急着摆姿势，而是问长真元，为什么总不出现在摄影社的合照里。',
+        '“镜头后面比较安全。”他笑了一下，“我知道怎么记录别人，却不知道怎么让别人认识我。”',
+        '你把相机接过来。取景框里，他有些无措，却没有躲开。'
+      ], [c('先问他是否愿意，再拍下这一刻。', 'exhibition', 2, 1), c('放下相机，听他讲第一张照片的故事。', 'exhibition', 2, 0), c('只拍温室的植物，把相机还给他。', 'exhibition', 0, 0)]),
+      library: scene(3, '安静的人，也有回声', '图书馆 · 靠窗阅览区', [
+        '清晨的图书馆只听得见翻页声。长真元拍完窗边的光，把一杯温热的牛奶放到你手边。',
+        '他翻开旧摄影集。最后一页夹着一张校园合照，所有人都看着镜头，只有拍照的人缺席。',
+        '“这些照片证明大家都来过。”他说。你想问，那谁来证明他也在这里？'
+      ], [c('拿出手机：“今天换我记录你，好吗？”', 'exhibition', 2, 1), c('在便签上写下：“我记得你也在。”', 'exhibition', 2, 0), c('聊起照片在宣传页上的排版。', 'exhibition', 0, 0)]),
+      exhibition: scene(4, '空白的作品名', '艺术楼 · 摄影展筹备室', [
+        '摄影社临时空出一个个人展位。社长希望长真元交一组自己的作品，他却迟迟没有填好报名表。',
+        '桌上是一组很特别的照片：你忙碌的背影、递出的节目单、落在窗边的笑。作品名仍然空白。',
+        '“拍的时候没想过展出。”他把相片翻过来，“这是你的生活，我应该先问你。而且……我还没准备好解释，为什么一直在看你。”'
+      ], [c('说清哪些照片可公开，再陪他写下作品名。', 'finale', 2, 1, 'exhibit'), c('“可以只留给我们，不必向谁解释。”', 'finale', 2, 0, 'private'), c('建议换成校园风景，专心完成展览。', 'finale', 0, 0, 'landscape')]),
+      finale: scene(5, '这一次，一起入镜', '银杏大道 · 金色傍晚', [
+        { flag: 'exhibit', yes: '展览结束，长真元的作品前停下过很多人。那些经过你允许才展出的照片，组成了一个名字：《看见》。署名旁，他写了一句“谢谢她愿意被认识”。', no: '展览结束，他把那组照片装进一个小册子，交到你手里。封面没有署名，只写着“谢谢你让我学会看见”。' },
+        '你们又走到初遇的银杏树下。这一次，他把相机架好，设置了十秒定时，却迟迟没按快门。',
+        '“我可以站在你旁边吗？”长真元问。他终于没有藏在镜头后面。'
+      ], [c('伸出手：“过来吧，男朋友的位置在这里。”', 'ending', 2, 1, 'confession'), c('拍拍身边的空位，约好明年再拍一张。', 'ending', 2, 0), c('邀请摄影社的朋友们一起合影。', 'ending', 0, 0)]),
+      endings: {
+        love: { title: '镜头之外，我们之内', label: '心动结局', paragraphs: ['倒计时响起。长真元走到你身边，先轻轻问了一句“可以牵手吗”，才把手递给你。照片里的两个人都笑得有点不熟练。', '后来，你们拥有了第一本双人相册。既有节日和远行，也有赶课路上没睡醒的脸。你不必每一刻都漂亮，他也不必每一次都躲开镜头。', '相册扉页是他的字：“我曾经记录世界。现在，我想和你一起生活在里面。”'] },
+        warm: { title: '下一张，等春天', label: '温柔结局', paragraphs: [{ flag: 'confession', yes: '长真元的耳尖红了。他走到你身边，却坦白自己还不习惯这么快定义关系：“可以先认真约一次会吗？”你答应了，合照上留下了两个有些害羞的笑。', no: '你们并肩留下了一张合照。长真元把照片认真洗了两份，你们各收好一张。' }, '他的消息渐渐多起来：今天云很漂亮，食堂出了新甜点，明年这里的银杏还会变黄。你也开始把生活里的小事发给他。', '你们还没有命名这份亲近。但下一次按下快门时，也许就能听见彼此更清楚的答案。'] },
+        friend: { title: '留在青春里的底片', label: '友情结局', paragraphs: [{ flag: 'confession', yes: '长真元放下相机，认真告诉你：“我很珍惜你，但暂时没有同样的恋爱心意。”你收回手，决定把这一刻留在记忆里，也尊重他的回答。后来，你们邀请摄影社的朋友们一起合影。', no: '那张合照最终挤满了朋友。长真元站在第二排，第一次不用举着相机，也能出现在大家的记忆里。' }, '你们成为值得信任的伙伴。每当需要一个细心的观察者，你会想起他；每当他想走出镜头，你会给他留个位置。', '毕业展上，这张合照被放在最显眼的地方。作品名叫《我们都来过》。'] }
+      }
+    },
+    ding: {
+      start: scene(1, '一杯贴着便利贴的豆浆', '星榆大学 · 舞蹈楼走廊', [
+        '早上七点，你来舞蹈楼检查音乐节排练场地。学生会的人叫你“王总”，隔壁练习室的定晨新却偏要喊你“熬夜大王”。',
+        '“又没吃早饭？”他把一杯豆浆放到你的策划本旁边，上面贴着便利贴：再忙也要吃。字写得歪歪扭扭，像刚跳完一整场舞。',
+        '你们合作过两次活动，总是一边拌嘴一边救场。今天他向你伸出手：“新节目差个舞伴，王总敢不敢来？”'
+      ], [c('把手递给他：“你可别跟不上我。”', 'practice', 2, 1), c('先喝豆浆，再认真问他怎么练。', 'practice', 2, 0), c('“我负责后勤，舞伴还是找社员吧。”', 'practice', 0, 0)]),
+      practice: scene(2, '八拍之外的小默契', '舞蹈社 · 练习室', [
+        '你决定学会一小段开场舞，给节目彩排一个惊喜。定晨新嘴上说你四肢不协调，放音乐时却把速度调低了一半。',
+        '你连续错了三个八拍，他也没有催。休息时，你看见他偷偷揉脚踝，问起才知道最近排练太密，医生让他减量。',
+        '“我知道分寸。”他说得很快。桌上的社团演出邀请写着明晚，他还没有回复。'
+      ], [c('约他明天去操场散步，好好聊一聊。', 'track', 2, 1, 'walk'), c('留下帮他整理旧排练录像。', 'video', 2, 0, 'video'), c('把医嘱转告社长，请团队调整排练。', 'video', 1, 0, 'schedule')]),
+      track: scene(3, '跑道没有规定终点', '操场 · 晚间散步', [
+        '你们沿跑道慢慢走，没有比赛，也没有倒计时。定晨新讲起初中时第一次跳舞：衣服太大，音乐放错，却开心得一整晚没睡着。',
+        '“现在大家叫我队长。我好像不能说累。”他看着跑道白线，“要是我停下来，就会有人超过我。”',
+        '你想到自己总把“没问题”挂在嘴边。原来你们都在假装，不需要谁等一等。'
+      ], [c('“我们约好，累的时候可以对彼此说。”', 'decision', 2, 1), c('告诉他，你也会因为做不好而害怕。', 'decision', 2, 0), c('帮他列一份更合理的训练计划。', 'decision', 1, 0)]),
+      video: scene(3, '没有满分的第一支舞', '社团活动室 · 旧录像', [
+        '电脑里播着定晨新大一时的录像。他踩错拍，差点撞到队友，却在谢幕时笑得特别亮。',
+        '“别笑，黑历史。”他作势要关掉。你拦住他，说那时的他看起来很快乐。他的手停在空中。',
+        '“现在跳得更好了，”他小声说，“可我总想着下一次必须更好。你呢，王总？你是不是也不敢让任何事情出错？”'
+      ], [c('“是。所以我们一起练习，偶尔不用满分。”', 'decision', 2, 1), c('分享你第一次办活动闹出的笑话。', 'decision', 2, 0), c('分析录像，讨论如何优化动作。', 'decision', 0, 0)]),
+      decision: scene(4, '把追赶变成并肩', '舞蹈社 · 音乐节前夕', [
+        '复诊后，医生明确建议定晨新暂停高强度动作。开场舞需要重排，社员们担心临时更换队长会影响演出。',
+        '他坐在镜子前，把演出鞋的鞋带松开：“我想跳，但也知道现在不该硬撑。”这一次，他没有逞强。',
+        '你们可以把复杂双人舞改成社团群舞，让他负责编排和现场口令。也可以暂停他的舞台部分，把康复放在前面。你等他一起决定。'
+      ], [c('与他一起设计群舞，把聚光灯分给队友。', 'finale', 2, 1, 'team'), c('支持他休息，陪他把交接做好。', 'finale', 2, 0, 'rest'), c('先完成你的事务，让社团自行决定。', 'finale', 0, 0, 'distance')]),
+      finale: scene(5, '不用追，也不会走散', '音乐节散场 · 校园路灯下', [
+        { flag: 'team', yes: '群舞演出赢得了很长的掌声。定晨新在侧台给出最后一个口令，社员们谢幕时整齐地喊出他的名字。原来站在舞台旁，也能成为重要的人。', no: '新的开场节目顺利完成。定晨新坐在观众席，看着队友谢幕，轻轻吐出一口气：“他们比我想象中做得更好。”' },
+        '散场后，你陪他慢慢走回宿舍。他忽然停下：“等我康复，我们再跳那支舞。不是为了节目，也不用给谁看。”',
+        '路灯把你们的影子照得很近。他收起熟悉的玩笑，认真补了一句：“只是因为，我想和你一起。”'
+      ], [c('“那说好了，下一支舞和下一段路都一起。”', 'ending', 2, 1, 'confession'), c('与他拉钩，约定康复后的第一支舞。', 'ending', 2, 0), c('“我会带大家一起给你加油。”', 'ending', 0, 0)]),
+      endings: {
+        love: { title: '并肩就是我们的节拍', label: '心动结局', paragraphs: ['“这算不算……在一起？”定晨新问得有点磕巴。你笑着点头，他耳尖红了，却坚持把你送到宿舍楼下。', '春天，他完成康复，你们终于在空练习室里跳完那支舞。踩错拍的时候，两个人一起笑出来，再从头开始。', '你们还是会拌嘴，也还是会忙碌。但再也不用把疲惫藏好，才能被喜欢。合拍不是永远不出错，是有人愿意和你一起找回节奏。'] },
+        warm: { title: '下次，换我等你', label: '温柔结局', paragraphs: [{ flag: 'confession', yes: '定晨新低头笑了，又认真看着你：“我想先学会照顾好自己，也再多认识你一点。别急着给我答案，我们慢慢来，好吗？”你与他拉钩，先把下一支舞约好。', no: '拉钩的时候，他的表情比登台还认真。“王总不许临时加班。”你答应了。' }, '你们开始交换早餐和康复进度。偶尔在晚课结束后散步，谁也不催谁把关系赶到某个终点。', '康复那天，他发来练习室的照片：“音乐准备好了。还有一句话，想当面告诉你。”'] },
+        friend: { title: '永远为彼此留一拍', label: '友情结局', paragraphs: [{ flag: 'confession', yes: '定晨新听出了你话里的认真，也收起了玩笑：“我希望我们还是朋友。我现在想一起跳舞的心情，还不是恋爱。”你点点头，把没说完的期待留给未来，也把祝福留给了他。', no: '你召集朋友们做了一张加油卡。定晨新嘴上嫌大家肉麻，却把卡片夹进最常用的舞谱。' }, '后来你们依然是活动现场最默契的搭档。你负责协调，他负责调动气氛，总能把忙乱变成一场值得记住的演出。', '有些陪伴不需要变成恋爱。青春的舞台上，你们一直为彼此留着一拍。'] }
+      }
+    }
+  };
+  const api = { title: '心动未完待续', subtitle: '星榆校园 · 恋爱互动小说', routes, stories };
+  if (typeof module !== 'undefined' && module.exports) module.exports = api;
+  else root.NovelStory = api;
+})(typeof globalThis !== 'undefined' ? globalThis : this);
+
+</script>
+<script>
+(function (root) {
+  const story = typeof module !== 'undefined' && module.exports ? require('./story') : root.NovelStory;
+  const VERSION = 1;
+  const hasRoute = route => typeof route === 'string' && story.routes.some(r => r.id === route);
+  function fresh(route) {
+    if (!hasRoute(route)) throw new Error('Unknown route');
+    return { version: VERSION, route, node: 'start', affection: 0, courage: 0, flags: [], history: [] };
+  }
+  function endingFor(state) {
+    if (state.affection >= 8 && state.courage >= 2) return 'love';
+    if (state.affection >= 5) return 'warm';
+    return 'friend';
+  }
+  function snapshot(state) {
+    return { node: state.node, affection: state.affection, courage: state.courage, flags: state.flags.slice() };
+  }
+  function validate(raw) {
+    // Replaying the choice history validates scores, branches and flags as well as the shape.
+    if (!raw || raw.version !== VERSION || !hasRoute(raw.route) || !Array.isArray(raw.history) || raw.history.length > 5) return null;
+    let state = fresh(raw.route);
+    for (const step of raw.history) {
+      if (!step || step.node !== state.node || !Number.isInteger(step.choice)) return null;
+      try { state = choose(state, step.choice); } catch (_) { return null; }
+    }
+    if (raw.node !== state.node || raw.affection !== state.affection || raw.courage !== state.courage || JSON.stringify(raw.flags) !== JSON.stringify(state.flags)) return null;
+    return state;
+  }
+  function choose(state, index) {
+    if (state.node === 'ending') throw new Error('The story has ended');
+    const node = story.stories[state.route][state.node];
+    const option = node && node.choices[index];
+    if (!Number.isInteger(index) || !option) throw new Error('Invalid choice');
+    return {
+      version: VERSION, route: state.route, node: option.next,
+      affection: state.affection + option.affection, courage: state.courage + option.courage,
+      flags: option.flag ? state.flags.concat(option.flag) : state.flags.slice(),
+      history: state.history.concat(Object.assign(snapshot(state), { choice: index }))
+    };
+  }
+  function back(state) {
+    if (!state.history.length) return state;
+    const previous = state.history[state.history.length - 1];
+    return { version: VERSION, route: state.route, node: previous.node, affection: previous.affection, courage: previous.courage, flags: previous.flags.slice(), history: state.history.slice(0, -1) };
+  }
+  function view(state) {
+    const route = story.routes.find(r => r.id === state.route);
+    const ending = state.node === 'ending';
+    const node = ending ? story.stories[state.route].endings[endingFor(state)] : story.stories[state.route][state.node];
+    return Object.assign({}, node, {
+      route, ending, endingId: ending ? state.route + ':' + endingFor(state) : '',
+      chapter: ending ? 6 : node.chapter,
+      progress: ending ? 100 : (node.chapter - 1) * 20,
+      relationship: state.affection >= 8 ? '心意相通' : state.affection >= 5 ? '渐渐靠近' : state.affection >= 2 ? '有点在意' : '初次心动',
+      paragraphs: node.paragraphs.map(p => typeof p === 'string' ? p : state.flags.includes(p.flag) ? p.yes : p.no)
+    });
+  }
+  function collection(unlocked) {
+    return story.routes.map(route => ({ id: route.id, route, endings: Object.keys(story.stories[route.id].endings).map(key => ({
+      id: route.id + ':' + key, unlocked: unlocked.includes(route.id + ':' + key),
+      title: story.stories[route.id].endings[key].title, label: story.stories[route.id].endings[key].label
+    })) }));
+  }
+  function validUnlocked(raw) {
+    const keys = story.routes.flatMap(r => Object.keys(story.stories[r.id].endings).map(k => r.id + ':' + k));
+    return Array.isArray(raw) ? Array.from(new Set(raw.filter(k => keys.includes(k)))) : [];
+  }
+  const api = { fresh, choose, back, view, validate, collection, validUnlocked, endingFor };
+  if (typeof module !== 'undefined' && module.exports) module.exports = api;
+  else root.NovelEngine = api;
+})(typeof globalThis !== 'undefined' ? globalThis : this);
+
+</script>
+<script>
+/* The browser edition uses the exact same story and state machine as WeChat. */
+(() => {
+  const story = window.NovelStory;
+  const engine = window.NovelEngine;
+  const key = 'heart-novel-v1';
+  const app = document.querySelector('#app');
+  const esc = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  let state = null, unlocked = [], selected = 'ma', screen = 'home', timer, storageError = false;
+  try {
+    const saved = JSON.parse(localStorage.getItem(key) || '{}');
+    state = engine.validate(saved.state);
+    unlocked = engine.validUnlocked(saved.unlocked);
+  } catch (_) { storageError = true; }
+  const action = (name, text, cls = '', extra = '') => `<button class="${cls}" data-action="${name}" ${extra}>${text}</button>`;
+  function notify(message) {
+    const toast = document.querySelector('#toast');
+    toast.textContent = message;
+    toast.classList.add('visible');
+    clearTimeout(timer);
+    timer = setTimeout(() => toast.classList.remove('visible'), 2800);
+  }
+  function persist() {
+    try { localStorage.setItem(key, JSON.stringify({ state, unlocked })); storageError = false; return true; }
+    catch (_) { storageError = true; notify('暂时无法保存，请勿关闭页面。'); return false; }
+  }
+  function home() {
+    const saved = state ? engine.view(state) : null;
+    return `<section class="welcome"><span class="eyebrow">写给青春，也写给勇敢的你</span><span class="welcome-note">INTERACTIVE NOVEL · 互动小说</span></section>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy"><span class="hero-kicker"><i></i> 星榆大学 · 秋日恋爱企划</span><h1 id="hero-title" tabindex="-1">这个秋天，<br>心动由你续写<span class="title-dot">。</span></h1><p>你是王总。是活动现场的主心骨，<br>也是某个人心里，最特别的存在。</p><div class="hero-actions">${action('routes', '开启我的故事 <span>↗</span>', 'primary')}${saved ? action('resume', `继续阅读 <span>${esc(saved.route.name)} · ${saved.ending ? '已读结局' : '第 ' + saved.chapter + ' 章'} →</span>`, 'resume') : '<span class="play-note">无需注册 · 选择后自动存档</span>'}</div><div class="hero-meta"><span>3 位男主</span><b>·</b><span>9 种结局</span><b>·</b><span>无限次心动</span></div></div>
+        <div class="hero-art" aria-hidden="true"><span class="art-corner">THE FIRST PAGE<br>OF OUR STORY</span><div class="arch"><div class="sun"></div><span class="window-line vertical"></span><span class="window-line horizontal"></span><div class="hills"></div></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="book book-one"><span>love<br>notes</span><small>AUTUMN, 2026</small></div><div class="book book-two"><span class="book-star">✧</span><span class="book-heart">♡</span><small>心动手记</small></div><div class="flower-stem"></div><span class="flower">✳︎</span><span class="art-star star-one">✦</span><span class="art-star star-two">✧</span><span class="art-script">a story waiting for you</span><span class="art-number">01</span></div>
+      </section>
+      <section class="encounters" aria-labelledby="boys-title"><div class="section-heading"><div><span class="eyebrow">THE LEADING BOYS</span><h2 id="boys-title">三次相遇，三种心动</h2></div><span class="section-aside">下一页，遇见那个特别的他 ↗</span></div><div class="boy-grid">${story.routes.map((r, i) => `<article class="boy-card ${r.id}"><div class="card-visual"><span class="card-number">0${i + 1}</span><span class="card-symbol">${r.icon}</span><span class="visual-lines"></span><span class="visual-caption">${['a song for you', 'through his lens', 'our own rhythm'][i]}</span></div><div class="boy-copy"><div class="boy-heading"><div><span class="route-role">${r.role}</span><h3>${r.name}</h3></div><span class="route-tag">${r.tag}</span></div><p>${r.subtitle}</p><div class="boy-bottom"><span>${['一首歌的距离', '一张照片的偏爱', '一个八拍的默契'][i]}</span>${action('encounter', '遇见他 <span>↗</span>', 'text-button', `data-route="${r.id}" aria-label="遇见${r.name}"`)}</div></div></article>`).join('')}</div></section>
+      <aside class="letter-note"><span class="letter-icon">✉︎</span><div><strong>不用急着做出「正确」的选择。</strong><p>勇敢表达，慢慢靠近，或成为彼此的好朋友。每一种青春，都值得被好好收藏。</p></div><span class="note-flower" aria-hidden="true">✳︎</span></aside>`;
+  }
+  function routes() {
+    return `<section class="route-page">${action('home', '← 返回书架', 'back-link')}<span class="eyebrow">CHOOSE YOUR FIRST ENCOUNTER</span><h1 tabindex="-1">故事，要从谁开始？</h1><p class="page-desc">不同的人，不同的相遇。让心意带你选一次。</p><div class="selection-grid" role="group" aria-label="选择男主">${story.routes.map((r, i) => `<button class="select-card ${r.id} ${selected === r.id ? 'selected' : ''}" data-action="select" data-route="${r.id}" aria-pressed="${selected === r.id}"><span class="select-top"><span>0${i + 1} / ${r.role}</span><span class="radio">${selected === r.id ? '●' : '○'}</span></span><span class="select-art" aria-hidden="true">${r.icon}</span><span class="select-name">${r.name}</span><span class="route-tag">${r.tag}</span><span class="select-sub">${r.subtitle}</span><span class="select-intro">${r.intro}</span><span class="quote">${r.quote}</span></button>`).join('')}</div><div class="begin-actions">${action('begin', '和' + story.routes.find(r => r.id === selected).name + '开启故事 <span>↗</span>', 'primary')}<span class="tiny-note">约 8 分钟一条路线 · 每次选择后自动保存进度</span></div></section>`;
+  }
+  function read() {
+    const v = engine.view(state);
+    return `<article class="reader ${v.route.id}"><div class="reader-nav">${action('home', '← 故事书架', 'back-link')}${action('save', storageError ? '重试保存' : '保存进度', 'back-link')}</div><div class="reader-banner"><span>${v.route.icon} ${v.route.name}的故事</span><span><i></i> ${v.relationship}</span></div><div class="progress" aria-label="剧情进度 ${v.progress}%"><span style="width:${v.progress}%"></span></div><span class="eyebrow">${v.ending ? 'THE END · ' + v.label : 'CHAPTER 0' + v.chapter + ' / 05'}</span><h1 tabindex="-1">${esc(v.title)}</h1>${v.ending ? '' : `<span class="location">⌖ ${esc(v.place)}</span>`}<div class="story-text">${v.paragraphs.map(p => `<p>${esc(p)}</p>`).join('')}</div>${v.ending ? `<div class="ending-stamp"><span>♡</span><strong>已收录至心动手记</strong><small>${unlocked.length} / 9 个结局</small></div><div class="ending-actions">${action('restart', '再写一种可能 ↗', 'primary')}${action('collection', '翻开心动手记', 'secondary')}${action('home', '回到故事书架', 'back-choice')}</div>` : `<div class="choice-caption"><span>轮到你了，王总。</span><small>你的回应是……</small></div><div class="choices">${v.choices.map((c, i) => action('choose', `<span class="choice-letter">${'ABC'[i]}</span><span class="choice-text">${esc(c.text)}</span><span class="choice-arrow">↗</span>`, 'choice', `data-index="${i}"`)).join('')}</div>${state.history.length ? action('back', '↶ 回到上一个选择', 'back-choice') : ''}`}</article>`;
+  }
+  function collection() {
+    return `<section class="collection-page">${action('home', '← 返回书架', 'back-link')}<span class="eyebrow">THE MEMORIES WE KEEP</span><h1 tabindex="-1">心动手记</h1><p class="page-desc">那些走过的故事，都在这里好好保存。</p><div class="collection-count">${unlocked.length}<span>/ 9 种结局已收集</span></div><div class="memory-grid">${engine.collection(unlocked).map(group => `<section class="memory-group ${group.route.id}"><h2><span>${group.route.icon}</span>${group.route.name}</h2>${group.endings.map(e => `<div class="memory ${e.unlocked ? 'unlocked' : ''}"><span class="memory-icon">${e.unlocked ? '♡' : '◇'}</span><div><strong>${e.unlocked ? e.title : '尚未寄出的信'}</strong><small>${e.label} · ${e.unlocked ? '已解锁' : '等待你的选择'}</small></div></div>`).join('')}</section>`).join('')}</div><aside class="letter-note"><span class="letter-icon">✉︎</span><div><strong>心动没有标准答案。</strong><p>选择愿意倾听的回应，能让关系更亲近；勇敢说出心意，也许会打开新的结局。</p></div></aside><div class="begin-actions">${action('routes', '开启另一种可能 ↗', 'primary')}</div></section>`;
+  }
+  function render(focus = true) {
+    app.innerHTML = ({ home, routes, read, collection })[screen]();
+    document.querySelector('#counter').textContent = unlocked.length;
+    for (const name of ['home', 'collection']) {
+      const node = document.querySelector('#nav-' + name);
+      const active = screen === name || (name === 'home' && screen === 'routes');
+      node.classList.toggle('active', active);
+      if (active) node.setAttribute('aria-current', 'page'); else node.removeAttribute('aria-current');
+    }
+    if (focus) { window.scrollTo(0, 0); app.querySelector('h1')?.focus({ preventScroll: true }); }
+  }
+  function show(next) {
+    state = next;
+    const v = engine.view(state);
+    if (v.ending && !unlocked.includes(v.endingId)) unlocked.push(v.endingId);
+    persist(); screen = 'read'; render();
+  }
+  document.addEventListener('click', event => {
+    const button = event.target.closest('[data-action]');
+    if (!button) return;
+    switch (button.dataset.action) {
+      case 'home': screen = 'home'; render(); break;
+      case 'routes': screen = 'routes'; render(); break;
+      case 'encounter': selected = button.dataset.route; screen = 'routes'; render(); break;
+      case 'select': {
+        selected = button.dataset.route; render(false);
+        app.querySelector(`[data-route="${selected}"]`).focus({ preventScroll: true }); break;
+      }
+      case 'collection': screen = 'collection'; render(); break;
+      case 'begin':
+        if (state && state.node !== 'ending' && !window.confirm('开始新的故事会替换当前阅读进度，已收集的结局会保留。继续吗？')) return;
+        show(engine.fresh(selected)); break;
+      case 'resume': if (state) show(state); break;
+      case 'choose': if (screen === 'read' && state.node !== 'ending') show(engine.choose(state, Number(button.dataset.index))); break;
+      case 'back': if (state) show(engine.back(state)); break;
+      case 'restart': selected = state.route; screen = 'routes'; render(); break;
+      case 'save': if (persist()) { render(false); notify('已保存，心动可以慢慢读。'); } break;
+    }
+  });
+  render(false);
+})();
+
+</script>
+</body>
+</html>
